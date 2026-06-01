@@ -1,7 +1,7 @@
 # Orthogonal Concept Erasure for Diffusion Models
 <p align="center">
   <a href='https://arxiv.org/abs/2605.28902'>
-    <img src='https://img.shields.io/badge/Arxiv-2503.07392-A42C25?style=flat&logo=arXiv&logoColor=A42C25'>
+    <img src='https://img.shields.io/badge/Arxiv-2605.28902-A42C25?style=flat&logo=arXiv&logoColor=A42C25'>
   </a>
 </p>
 
