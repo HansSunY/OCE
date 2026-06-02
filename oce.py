@@ -63,8 +63,8 @@ def Orthogonal_Erase(pipe, edit_concepts, guide_concepts, preserve_concepts,
     start_time = time.time()
     print(f"Editing with {edit_concepts}")
 
-    ce_stats = torch.load("Ce.pt", map_location=pipe.device)
-    C_e = ce_stats["C"].to(device, dtype=torch_dtype)
+    cg_stats = torch.load("Cg.pt", map_location=pipe.device)
+    C_g = cg_stats["C"].to(device, dtype=torch_dtype)
 
     # ===== collect target modules =====
     target_modules, module_names = [], []
@@ -113,7 +113,7 @@ def Orthogonal_Erase(pipe, edit_concepts, guide_concepts, preserve_concepts,
         for Kp in preserve_embs:
             v = W0 @ Kp
             M_total += preserve_scale_2 * (v.unsqueeze(1) @ v.unsqueeze(0))
-        M_total += preserve_scale * (W0 @ C_e @ W0.T)
+        M_total += preserve_scale * (W0 @ C_g @ W0.T)
         M_total += lamb * (W0 @ W0.T)
         # === (3) Procrustes ===
         U, _, Vh = torch.linalg.svd(M_total, full_matrices=False)
