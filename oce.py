@@ -4,7 +4,7 @@ import argparse
 import os
 import copy
 import time
-
+import random
 from safetensors.torch import save_file
 from diffusers import DiffusionPipeline
 from safetensors.torch import load_file
