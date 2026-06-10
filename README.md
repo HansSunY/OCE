@@ -7,6 +7,9 @@
 
 Official implementation of [Orthogonal Concept Erasure for Diffusion Models](https://arxiv.org/abs/2605.28902).
 ![OCE Framework](assets/teaser.png)
+
+## News
+- `2026/06/10` **Update: FLUX support for OCE**🎉
 ## Model Card
 We provide several erased models with OCE on Stable Diffusion v1.4 [here](https://drive.google.com/drive/folders/1EoYRMYxx1uzILsZ_Jejtb3hvxVN4e5Ve?usp=sharing).
 ## Setup
@@ -18,9 +21,13 @@ pip install -r requirements.txt
 ```
 ## Concept Erasure with OCE
 ### Compute the generic preservation term $C_g$
-
+For SD model
 ```bash
 python compute_Cg.py
+```
+For FLUX
+```bash
+python compute_Cg_flux.py
 ```
 ### Closed-Form Concept Erasure
 We provide scripts for object, style, celebrity (multi-concept), and nudity concept erasure in the `trainscripts` directory. You can directly run the corresponding script for erasure, for example:
